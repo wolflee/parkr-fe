@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="open-panel">Left Panel</a></div>
+            <div class="center sliding">Parkr App</div>
+            <div class="right"><a href="#" data-panel="right" class="open-panel">Right Panel</a></div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title">Welcome To Parkr App</div>
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <p><strong>这里放一些简介</strong></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+
+              <div class="content-block-title">选择收费标准</div>
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button button-big active">每15分钟1元</a></div>
+                    <div class="col-33"><a href="#" class="button button-big">每15分钟2元</a></div>
+                    <div class="col-33"><a href="#" class="button button-big">每15分钟4元</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button button-big">每小时5元</a></div>
+                    <div class="col-33"><a href="#" class="button button-big">每小时10元</a></div>
+                    <div class="col-33"><a href="#" class="button button-big">第一个小时10元，第二个小时15</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button button-big">10元不限时</a></div>
+                    <div class="col-33"><a href="#" class="button button-big">20元不限时</a></div>
+                    <div class="col-33"><a href="#" class="button button-big">其他</a></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-block-title">给出评价</div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                  <label class="label-radio item-content">
+                    <input type="radio" name="ks-radio" value="Excellent" checked="checked"/>
+                    <div class="item-inner">
+                      <div class="item-title">非常棒</div>
+                    </div>
+                  </label>
+                  </li>
+                  <li>
+                  <label class="label-radio item-content">
+                    <input type="radio" name="ks-radio" value="Good"/>
+                    <div class="item-inner">
+                      <div class="item-title">不错</div>
+                    </div>
+                  </label>
+                  </li>
+                  <li>
+                  <label class="label-radio item-content">
+                    <input type="radio" name="ks-radio" value="Normal"/>
+                    <div class="item-inner">
+                      <div class="item-title">一般般</div>
+                    </div>
+                  </label>
+                  </li>
+                  <li>
+                  <label class="label-radio item-content">
+                    <input type="radio" name="ks-radio" value="Poor"/>
+                    <div class="item-inner">
+                      <div class="item-title">极差</div>
+                    </div>
+                  </label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="content-block-title">个人信息</div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">昵称</div>
+                      <div class="item-input">
+                        <input type="text" placeholder="昵称"/>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">E-mail</div>
+                      <div class="item-input">
+                        <input type="email" placeholder="E-mail"/>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-tel"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">手机号</div>
+                      <div class="item-input">
+                        <input type="tel" placeholder="手机号"/>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">性别</div>
+                      <div class="item-input">
+                        <select>
+                          <option>男</option>
+                          <option>女</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">Switch</div>
+                      <div class="item-input">
+                        <label class="label-switch">
+                          <input type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">Slider</div>
+                      <div class="item-input">
+                        <div class="range-slider">
+                          <input type="range" min="0" max="100" value="50" step="0.1"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-50"><a href="#" class="button button-big button-submit">提交</a></div>
+                  <div class="col-50"><a href="#" class="button button-big button-cancel">重置</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            Powered by <a href="#" class="link">Framework7</a>
+            <!--<a href="#" class="link">Link 2</a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

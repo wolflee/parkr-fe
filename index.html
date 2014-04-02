@@ -5,58 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS-->
+    <title>Parkr App</title>
     <link rel="stylesheet" href="css/framework7.css">
-    <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
   </head>
   <body>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>Left panel content goes here</p>
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
     <div class="views">
-      <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left"><a href="#" class="open-panel">Left Panel</a></div>
-            <div class="center sliding">Parkr App</div>
-            <div class="right"><a href="#" data-panel="right" class="open-panel">Right Panel</a></div>
-          </div>
-        </div>
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
-          <!-- Page, data-page contains page name-->
+        <div class="pages">
           <div data-page="index" class="page">
-            <!-- Scrollable page content-->
             <div class="page-content">
               <div class="content-block-title">Welcome To Parkr App</div>
-              <div class="content-block">
-                <div class="content-block-inner">
-                  <p><strong>这里放一些简介</strong></p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-              </div>
-
               <div class="content-block-title">选择收费标准</div>
               <div class="content-block">
                 <div class="content-block-inner">
@@ -215,6 +174,16 @@
                     </div>
                   </div>
                   </li>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">图片</div>
+                      <div class="item-input">
+                        <input type="file"/>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
                 </ul>
               </div>
 
@@ -228,18 +197,10 @@
           </div>
         </div>
 
-        <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner">
-            Powered by <a href="#" class="link">Framework7</a>
-            <!--<a href="#" class="link">Link 2</a>-->
-          </div>
-        </div>
       </div>
     </div>
-    <!-- Path to Framework7 Library JS-->
+
     <script type="text/javascript" src="js/framework7.js"></script>
-    <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
   </body>
 </html>

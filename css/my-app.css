@@ -2,3 +2,11 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+#uploader {
+  display: none;
+}
+
+.button.button-camera {
+  font-size: 20px;
+}

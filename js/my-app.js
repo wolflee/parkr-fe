@@ -11,9 +11,10 @@ function getPrice(){
 }
 
 function getFeatures(){
-  return $("#feature .button.active").map(function(){
-    return $(this).data("feature"); 
-  });
+  return AV._.toArray(
+    $("#feature .button.active").map(function(){
+    return $(this).data("feature");
+  }));
 }
 
 function getPhotoFile(){
@@ -33,14 +34,10 @@ function getName(){
 }
 
 function getGeoLocation(){
-  var geo;
   navigator.geolocation.getCurrentPosition(function(position){
-    geo = new AV.GeoPoint({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude
-    });
+    $("#hiddenLocation").data("latitude", position.coords.latitude);
+    $("#hiddenLocation").data("longitude", position.coords.longitude);
   });
-  return geo;
 }
 
 $(document).ready(function(){
@@ -49,11 +46,15 @@ $(document).ready(function(){
     var features = getFeatures();
     var photo = getPhotoFile();
     var name = getName();
-    var geo = getGeoLocation();
+    var geo = new AV.GeoPoint({
+      latitude: $("#hiddenLocation").data("latitude"),
+      longitude: $("#hiddenLocation").data("longitude")
+    });
 
     var Lot = AV.Object.extend("Lot");
     var lot = new Lot();
     lot.set("price", price);
+    lot.set("features", {});
     lot.set("features", features);
     if (photo) {
       lot.set("photo", photo);
@@ -64,7 +65,8 @@ $(document).ready(function(){
     lot.save(null, {
       success: function(lot){
         myApp.hidePreloader();
-        //location.reload();
+        //alert("success");
+        location.reload();
       },
       error: function(lot, error){
         myApp.hidePreloader();
@@ -78,13 +80,20 @@ $(document).ready(function(){
     $(this).addClass("active");
   });
 
-  $("#feature .button").on('click', function(){
+  $("#feature .required .button").on('click', function(){
+    $("#feature .required .button").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  $("#feature .optional .button").on('click', function(){
     $(this).toggleClass("active");
   });
 
   $("#buttonUpload").on('click', function(){
     $("#fileUpload").click();
   });
+
+  getGeoLocation();
 
   $("#buttonSubmit").removeClass('disabled');
 });

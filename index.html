@@ -8,202 +8,236 @@
     <title>Parkr App</title>
     <link rel="stylesheet" href="css/framework7.css">
     <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/linecons.css">
+    <!--<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css" />-->
   </head>
   <body>
     <div class="views">
       <div class="view view-main">
-        <div class="pages">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!--<div class="left"><a href="#" class="open-panel">Left Panel</a></div>-->
+            <div class="center sliding">Parkr App</div>
+            <!--<div class="right"><a href="#" data-panel="right" class="open-panel">Right Panel</a></div>-->
+          </div>
+        </div>
+        <div class="pages navbar-through toolbar-through">
           <div data-page="index" class="page">
             <div class="page-content">
               <div class="content-block-title">Welcome To Parkr App</div>
-              <div class="content-block-title">选择收费标准</div>
-              <div class="content-block">
+              <div class="content-block-title">这栏最重要，其他无所谓</div>
+              <div class="content-block" id="price">
                 <div class="content-block-inner">
                   <div class="row button-group">
-                    <div class="col-50"><a href="#" class="button button-big active">2.50/15分钟</a></div>
-                    <div class="col-50"><a href="#" class="button button-big">1.25/15分钟</a></div>
+                    <div class="col-33"><a href="#" class="button" data-price="200">2元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button active" data-price="500">5元/1小时钟</a></div>
+                    <div class="col-33"><a href="#" class="button" data-price="1000">10元/1小时</a></div>
                   </div>
                   <div class="row button-group">
-                    <div class="col-50"><a href="#" class="button button-big">1.00/15分钟</a></div>
-                    <div class="col-50"><a href="#" class="button button-big">0.50/15分钟</a></div>
-                  </div>
-                  <div class="row button-group">
-                    <div class="col-50"><a href="#" class="button button-big">10.00/1小时</a></div>
-                    <div class="col-50"><a href="#" class="button button-big">第一小时10.00 第二小时15</a></div>
-                  </div>
-                  <div class="row button-group">
-                    <div class="col-50"><a href="#" class="button button-big">5.00/1小时</a></div>
-                    <div class="col-50"><a href="#" class="button button-big">2.00/1小时</a></div>
-                  </div>
-                  <div class="row button-group">
-                    <div class="col-50"><a href="#" class="button button-big">1.00/1小时</a></div>
-                    <div class="col-50"><a href="#" class="button button-big">免费</a></div>
+                    <div class="col-33"><a href="#" class="button" data-price="100">1元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button" data-price="400">4元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button" data-price="0">免费</a></div>
                   </div>
                 </div>
               </div>
 
-              <div class="content-block-title">评价停车位</div>
-              <div class="list-block">
-                <ul>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Far"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">走得远</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Wide"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">够宽</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Narrow"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">太窄</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Informal"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">不正规</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Wrong"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">瞎画线</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Safe"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">安全</div>
-                    </div>
-                  </label>
-                  </li>
-                </ul>
-              </div>
-              <div class="content-block-title">评价管理员</div>
-              <div class="list-block">
-                <ul>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Unreasonable"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">瞎要价</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Scheming"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">鸡贼</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Serious"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">认真负责</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Speedy"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">跑得快</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Greed"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">掉钱眼里</div>
-                    </div>
-                  </label>
-                  </li>
-                  <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="ks-checkbox" value="Kind"/>
-                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                    <div class="item-inner">
-                      <div class="item-title">和善</div>
-                    </div>
-                  </label>
-                  </li>
-                </ul>
+              <div class="content-block-title">花5秒再多选几项更精确</div>
+              <div class="content-block" id="feature">
+                <div class="content-block-inner">
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button" data-feature="per15m">以15分钟计费</a></div>
+                    <div class="col-33"><a href="#" class="button" data-feature="per1h">以1小时计费</a></div>
+                    <div class="col-33"><a href="#" class="button" data-feature="raise2ndh">第二小时加价</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button" data-feature="freeforshopping">购物免费</a></div>
+                    <div class="col-33"><a href="#" class="button" data-feature="policearound">附近有贴条</a></div>
+                    <div class="col-33"><a href="#" class="button" data-feature="far">走得远不方便</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button" data-feature="narrow">车距窄碰车门</a></div>
+                    <div class="col-33"><a href="#" class="button" data-feature="cheapfornight">夜里便宜</a></div>
+                    <div class="col-33"><a href="#" class="button" data-feature="sizematters">分大小车</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-25"><a href="#" class="button" data-feature="undertree">在树下</a></div>
+                    <div class="col-25"><a href="#" class="button" data-feature="vault">在地库</a></div>
+                    <div class="col-25"><a href="#" class="button" data-feature="stereo">升降式</a></div>
+                    <div class="col-25"><a href="#" class="button" data-feature="roadside">在路边</a></div>
+                  </div>
+                </div>
               </div>
 
-              <div class="content-block-title">位置标签</div>
+              <div class="content-block-title">只要有空拍停车收费牌，上面可以都忽略</div>
+              <div class="content-block" id="price">
+                <div class="content-block-inner">
+                  <div class="row">
+                    <!--<div class="col-25">-->
+                      <input type="file" id="fileUpload" accept="image/*" />
+                      <!--<a href="#" id="upload" class="button button-big button-camera"><span class="ion-camera"></span></a>-->
+                      <a href="#" id="buttonUpload" class="button button-big button-camera"><span class="icon-camera"></span></a>
+                    <!--</div>-->
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-block-title">位置名称（如：凯德MALL对面）</div>
               <div class="list-block">
                 <ul>
                   <li>
                   <div class="item-content">
                     <div class="item-inner">
-                      <div class="item-title label">位置信息</div>
+                      <!--<div class="item-title label">位置名称（如：凯德MALL对面）</div>-->
                       <div class="item-input">
-                        <input type="text" placeholder="位置信息"/>
+                        <input type="text" id="textLocation" placeholder="位置名称"/>
                       </div>
                     </div>
                   </div>
                   </li>
-                  <li>
-                  <div class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">图片</div>
-                      <div class="col-33">
-                        <div class="item-input">
-                          <input type="file" id="uploader" accept="image/*" multiple/>
-                          <a href="#" id="upload" class="button button-camera">+</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  </li>
+                  <!--<li>-->
+                  <!--<div class="item-content">-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title label">图片</div>-->
+                      <!--<div class="col-33">-->
+                        <!--<div class="item-input">-->
+                          <!--[><a href="#" id="upload" class="button button-big"><span class="ion-camera"></span></a><]-->
+                        <!--</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--</li>-->
                 </ul>
               </div>
 
-              <div class="content-block">
-                <div class="row">
-                  <div class="col-50"><a href="#" class="button button-big button-submit">提交</a></div>
-                  <div class="col-50"><a href="#" class="button button-big button-cancel">重置</a></div>
-                </div>
-              </div>
+              <!--<div class="list-block">-->
+                <!--<ul>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Far"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">走得远</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Wide"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">够宽</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Narrow"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">太窄</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Informal"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">不正规</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Wrong"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">瞎画线</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Safe"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">安全</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</div>-->
+              <!--<div class="content-block-title">评价管理员</div>-->
+              <!--<div class="list-block">-->
+                <!--<ul>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Unreasonable"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">瞎要价</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Scheming"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">鸡贼</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Serious"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">认真负责</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Speedy"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">跑得快</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Greed"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">掉钱眼里</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<label class="label-checkbox item-content">-->
+                    <!--<input type="checkbox" name="ks-checkbox" value="Kind"/>-->
+                    <!--<div class="item-media"><i class="icon icon-form-checkbox"></i></div>-->
+                    <!--<div class="item-inner">-->
+                      <!--<div class="item-title">和善</div>-->
+                    <!--</div>-->
+                  <!--</label>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</div>-->
             </div>
           </div>
         </div>
 
+        <div class="toolbar">
+          <a href="#" id="buttonSubmit" class="button button-big button-submit">提交</a>
+        </div>
       </div>
     </div>
 
     <script src="https://cn.avoscloud.com/scripts/lib/av-0.3.1.min.js"></script>
+    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/framework7.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
   </body>

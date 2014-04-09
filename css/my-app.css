@@ -13,3 +13,9 @@
   margin-right: auto;
   width: 40%;
 }
+
+.button.disabled {
+  pointer-events: none;
+  border-color: lightgrey;
+  background: lightgrey;
+}

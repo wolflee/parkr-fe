@@ -6,23 +6,14 @@ var mainView = myApp.addView('.view-main', {
 
 AV.initialize("gosiknzn1db4o6sdlzjo2ozq17sqhyfl1wdomipneda90bbo", "x6zak5uxsty6jatbxx46al0rfsulj2lxntwpgh5125qr63j5");
 
-function getGeoLocation(){
-  var geo;
-  navigator.geolocation.getCurrentPosition(function(position){
-    geo = new AV.GeoPoint({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude
-    });
-  });
-  return geo;
-}
-
 function getPrice(){
   return $("#price .button.active").data("price");
 }
 
 function getFeatures(){
-  return $("#feature .button.active").map(function(){return $(this).data("feature"); })
+  return $("#feature .button.active").map(function(){
+    return $(this).data("feature"); 
+  });
 }
 
 function getPhotoFile(){
@@ -37,27 +28,43 @@ function getPhotoFile(){
   return null;
 }
 
-$(function(){
+function getName(){
+  return $("#textLocation").val() ? $("#textLocation").val() : "";
+}
+
+function getGeoLocation(){
+  var geo;
+  navigator.geolocation.getCurrentPosition(function(position){
+    geo = new AV.GeoPoint({
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude
+    });
+  });
+  return geo;
+}
+
+$(document).ready(function(){
   $("#buttonSubmit").on('click', function(){
     var price = getPrice();
     var features = getFeatures();
-    var geo = getGeoLocation();
     var photo = getPhotoFile();
-    var name = $("#textLocation").val();
+    var name = getName();
+    var geo = getGeoLocation();
 
     var Lot = AV.Object.extend("Lot");
     var lot = new Lot();
     lot.set("price", price);
     lot.set("features", features);
-    if (!photo) {
+    if (photo) {
       lot.set("photo", photo);
     }
     lot.set("name", name);
-    myApp.showPreloader('提交中...')
+    lot.set("location", geo);
+    myApp.showPreloader('提交中...');
     lot.save(null, {
       success: function(lot){
         myApp.hidePreloader();
-        location.reload();
+        //location.reload();
       },
       error: function(lot, error){
         myApp.hidePreloader();
@@ -78,4 +85,6 @@ $(function(){
   $("#buttonUpload").on('click', function(){
     $("#fileUpload").click();
   });
+
+  $("#buttonSubmit").removeClass('disabled');
 });

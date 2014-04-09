@@ -64,9 +64,10 @@ $(document).ready(function(){
     myApp.showPreloader('提交中...');
     lot.save(null, {
       success: function(lot){
-        myApp.hidePreloader();
-        //alert("success");
-        location.reload();
+        setTimeout(function(){
+          myApp.hidePreloader();
+          location.reload();
+        },1000);
       },
       error: function(lot, error){
         myApp.hidePreloader();

@@ -40,7 +40,11 @@ function getGeoLocation(){
   });
 }
 
+
 $(document).ready(function(){
+
+  //FastClick.attach(document.body);
+
   $("#buttonSubmit").on('click', function(){
     var price = getPrice();
     var features = getFeatures();
@@ -76,21 +80,21 @@ $(document).ready(function(){
     });
   });
 
-  $("#price .button").on('click', function(){
-    $("#price .button").removeClass("active");
+  $("#price a").on('touchend', function(){
+    $("#price a").removeClass("active");
     $(this).addClass("active");
   });
 
-  $("#feature .required .button").on('click', function(){
-    $("#feature .required .button").removeClass("active");
+  $("#feature .required a").on('touchend', function(){
+    $("#feature .required a").removeClass("active");
     $(this).addClass("active");
   });
 
-  $("#feature .optional .button").on('click', function(){
+  $("#feature .optional a").on('touchend', function(){
     $(this).toggleClass("active");
   });
 
-  $("#buttonUpload").on('click', function(){
+  $("#buttonUpload").on('touchend', function(){
     $("#fileUpload").click();
   });
 

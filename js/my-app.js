@@ -70,8 +70,14 @@ $(document).ready(function(){
       success: function(lot){
         setTimeout(function(){
           myApp.hidePreloader();
-          location.reload();
-        },1000);
+          $("#toolbar a").text("提交成功")
+          $("#toolbar").animate({
+            "bottom": "-=50px"
+          }, 1000, function(){
+            //$("#toolbar").removeClass('beneath');
+            location.reload();
+          });
+        }, 1000);
       },
       error: function(lot, error){
         myApp.hidePreloader();
@@ -83,6 +89,14 @@ $(document).ready(function(){
   $("#price a").on('click', function(){
     $("#price a").removeClass("active");
     $(this).addClass("active");
+
+    if($("#toolbar").hasClass("beneath")){
+      $("#toolbar").animate({
+        "bottom": "+=50px"
+      }, 1000, function(){
+        $("#toolbar").removeClass('beneath');
+      });
+    }
   });
 
   $("#feature .required a").on('click', function(){

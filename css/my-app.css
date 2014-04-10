@@ -8,10 +8,11 @@
 }
 
 .button.button-camera {
-  font-size: 36px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+  margin: auto;
+  background: url(../img/camera.png) no-repeat 0 0;
+  width: 80px;
+  height: 65px;
+  border: 0;
 }
 
 .button.disabled {
@@ -19,3 +20,53 @@
   border-color: lightgrey;
   background: lightgrey;
 }
+
+.button.active {
+  background: #09f;
+  color: #fff;
+}
+
+.tag {
+  display: inline;
+  border-radius: 0;
+  padding: 5px;
+  line-height: 40px;
+  background: #efeff4;
+  border-color: #999;
+  color: #000;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.toolbar.beneath {
+  bottom: -50px;
+}
+
+.content-block {
+  margin: 0 0 25px;
+}
+
+input[type=text] {
+  border-radius: 0;
+  width: 75%;
+  border: 1px solid #999;
+}
+
+.toolbar {
+  background: darkgrey;
+}
+
+#toolbar a {
+  width: 30%;
+  display: block;
+  margin: 7px auto;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 7px;
+  background: #efeff4;
+  border-color: #999;
+  color: black;
+}
+

@@ -45,7 +45,7 @@ $(document).ready(function(){
 
   //FastClick.attach(document.body);
 
-  $("#buttonSubmit").on('click', function(){
+  $("#buttonSubmit").on('touchend', function(){
     var price = getPrice();
     var features = getFeatures();
     var photo = getPhotoFile();

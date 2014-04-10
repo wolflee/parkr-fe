@@ -43,9 +43,9 @@ function getGeoLocation(){
 
 $(document).ready(function(){
 
-  //FastClick.attach(document.body);
+  FastClick.attach(document.body);
 
-  $("#buttonSubmit").on('touchend', function(){
+  $("#buttonSubmit").on('click', function(){
     var price = getPrice();
     var features = getFeatures();
     var photo = getPhotoFile();
@@ -80,21 +80,21 @@ $(document).ready(function(){
     });
   });
 
-  $("#price a").on('touchend', function(){
+  $("#price a").on('click', function(){
     $("#price a").removeClass("active");
     $(this).addClass("active");
   });
 
-  $("#feature .required a").on('touchend', function(){
+  $("#feature .required a").on('click', function(){
     $("#feature .required a").removeClass("active");
     $(this).addClass("active");
   });
 
-  $("#feature .optional a").on('touchend', function(){
+  $("#feature .optional a").on('click', function(){
     $(this).toggleClass("active");
   });
 
-  $("#buttonUpload").on('touchend', function(){
+  $("#buttonUpload").on('click', function(){
     $("#fileUpload").click();
   });
 

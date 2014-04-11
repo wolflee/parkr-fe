@@ -115,6 +115,36 @@ $(document).ready(function(){
     $("#fileUpload").click();
   });
 
+  function imagePreview(){
+    var loadingImage = loadImage(
+      $("#fileUpload")[0].files[0],
+      function(img){
+        $("#buttonUpload").removeClass('button button-big button-camera')
+        $("#buttonUpload span").remove();
+        $("#buttonUpload").appendChild(img);
+      },
+      {maxWidth: 300}
+    );
+    if (!loadingImage){
+    }
+  }
+
+  $("#fileUpload").on('change', function(e){
+    var loadingImage = loadImage(
+      e.target.files[0],
+      function(img){
+        $("#buttonUpload").removeClass('button button-big button-camera')
+        $("#buttonUpload span").remove();
+        $("#buttonUpload img").remove();
+        $("#buttonUpload")[0].appendChild(img);
+        $("#buttonUpload").addClass('preview');
+      },
+      {maxWidth: 300}
+    );
+    if (!loadingImage){
+    }
+  });
+
   getGeoLocation();
 
   $("#buttonSubmit").removeClass('disabled');

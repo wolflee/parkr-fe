@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>易泊 - 收集</title>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="css/linecons.css">
+    <link rel="stylesheet" href="css/b.css">
+  </head>
+  <body>
+    <div class="views">
+      <div class="view view-main">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">易泊 - 收集</div>
+          </div>
+        </div>
+        <div class="pages navbar-through toolbar-through">
+          <div data-page="index" class="page">
+            <div class="page-content">
+              <div class="content-block-title">请根据情况选择</div>
+              <div class="content-block-title">这栏最重要，其他无所谓</div>
+              <div class="content-block" id="price">
+                <div class="content-block-inner">
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button small" data-price="100">1元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-price="200">2元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-price="300">3元/1小时</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button small" data-price="400">4元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-price="500">5元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-price="600">6元/1小时</a></div>
+                  </div>
+                  <div class="row button-group">
+                    <div class="col-33"><a href="#" class="button small" data-price="800">8元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-price="1000">10元/1小时</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-price="0">免费</a></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-block-title">花5秒再多选几项更精确</div>
+              <div class="content-block" id="feature">
+                <div class="content-block-inner">
+                  <div class="row button-group required">
+                    <div class="col-33"><a href="#" class="button small" data-feature="per15m">以15分钟计费</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-feature="per1h">以1小时计费</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-feature="raise2ndh">第二小时加价</a></div>
+                  </div>
+                  <div class="row button-group optional">
+                    <div class="col-33"><a href="#" class="button small" data-feature="freeforshopping">购物免费</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-feature="policearound">附近有贴条</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-feature="far">走得远不方便</a></div>
+                  </div>
+                  <div class="row button-group optional">
+                    <div class="col-33"><a href="#" class="button small" data-feature="narrow">车距窄碰车门</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-feature="cheapfornight">夜里便宜</a></div>
+                    <div class="col-33"><a href="#" class="button small" data-feature="sizematters">分大小车</a></div>
+                  </div>
+                  <div class="row button-group optional">
+                    <div class="col-25"><a href="#" class="button small" data-feature="undertree">在树下</a></div>
+                    <div class="col-25"><a href="#" class="button small" data-feature="vault">在地库</a></div>
+                    <div class="col-25"><a href="#" class="button small" data-feature="stereo">升降式</a></div>
+                    <div class="col-25"><a href="#" class="button small" data-feature="roadside">在路边</a></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-block-title">只要有空拍停车收费牌，上面可以都忽略</div>
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <div class="row">
+                      <input type="file" id="fileUpload" accept="image/*" />
+                      <a href="#" id="buttonUpload" class="button button-big button-camera"><span class="icon-camera"></span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-block-title">位置名称（如：凯德MALL对面）</div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input type="hidden" id="hiddenLocation">
+                        <input type="text" id="textLocation" placeholder="位置名称"/>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div id="toolbar" class="toolbar beneath">
+          <a href="#" id="buttonSubmit" class="button button-big button-submit disabled">提交</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cn.avoscloud.com/scripts/lib/av-0.3.1.min.js"></script>
+    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

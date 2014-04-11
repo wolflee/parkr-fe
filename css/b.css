@@ -1,0 +1,37 @@
+.row.button-group {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#fileUpload {
+  display: none;
+}
+
+.button.button-camera {
+  font-size: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.button.disabled {
+  pointer-events: none;
+  border-color: lightgrey;
+  background: lightgrey;
+}
+
+.small {
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.beneath {
+  bottom: -50px;
+}
+
+#toolbar a {
+  width: 40%;
+  margin: 3px auto;
+  height: 36px;
+  line-height: 32px;
+}

@@ -53,6 +53,7 @@ input[type=text] {
   border-radius: 0;
   width: 75%;
   border: 1px solid #999;
+  -webkit-appearance: none;
 }
 
 .toolbar {

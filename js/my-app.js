@@ -65,11 +65,12 @@ $(document).ready(function(){
     }
     lot.set("name", name);
     lot.set("location", geo);
-    myApp.showPreloader('提交中...');
+    //myApp.showPreloader('提交中...');
+    $("#toolbar a").text("提交中...")
     lot.save(null, {
       success: function(lot){
         setTimeout(function(){
-          myApp.hidePreloader();
+          //myApp.hidePreloader();
           $("#toolbar a").text("提交成功")
           $("#toolbar").animate({
             "bottom": "-=50px"
@@ -80,7 +81,7 @@ $(document).ready(function(){
         }, 1000);
       },
       error: function(lot, error){
-        myApp.hidePreloader();
+        //myApp.hidePreloader();
         alert('Failed to create new object, with error code: ' + error.description);
       }
     });
@@ -109,6 +110,22 @@ $(document).ready(function(){
 
   $("#feature .optional a").on('click', function(){
     $(this).toggleClass("active");
+  });
+
+  $("#buttonUpload").on('mousedown', function(){
+    $(this).addClass("pressed");
+  });
+
+  $("#buttonUpload").on('mouseup', function(){
+    $(this).removeClass("pressed");
+  });
+
+  $("#buttonUpload").on('touchstart', function(){
+    $(this).addClass("pressed");
+  });
+
+  $("#buttonUpload").on('touchend', function(){
+    $(this).removeClass("pressed");
   });
 
   $("#buttonUpload").on('click', function(){

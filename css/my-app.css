@@ -8,12 +8,16 @@
 }
 
 .button.button-camera {
-  margin: 10px auto -28px;
-  background: url(../img/camera.png) no-repeat 0 0;
-  background-size: 50%;
-  width: 80px;
-  height: 65px;
+  margin: 10px auto 0;
+  background: url(../img/camera-normal.png) no-repeat 0 0;
+  /*background-size: 50%;*/
+  width: 110px;
+  height: 110px;
   border: 0;
+}
+
+.button.button-camera.pressed {
+  background-image: url(../img/camera-pressed.png);
 }
 
 .button.disabled {
@@ -69,4 +73,15 @@ input[type=text] {
   text-align: center;
   position: relative;
   display: block;
+}
+
+.content-block-title {
+  margin-bottom: 7px;
+  white-space: normal;
+}
+
+.page-content {
+  top: -210px;
+  position: relative;
+  height: 140%;
 }

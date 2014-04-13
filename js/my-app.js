@@ -10,6 +10,13 @@ $(document).ready(function(){
 
   FastClick.attach(document.body);
 
+  function initPage(){
+    //location.reload();
+    $("a").removeClass("active");
+    $("input").val(null);
+    $("#buttonUpload span").show();
+  }
+
   function getPrice(){
     return $("#price .button.active").data("price");
   }
@@ -44,7 +51,7 @@ $(document).ready(function(){
     });
   }
 
-  function getName(){
+  function getComment(){
     return $("#textComment").val() ? $("#textComment").val() : "";
   }
 
@@ -77,11 +84,11 @@ $(document).ready(function(){
         setTimeout(function(){
           //myApp.hidePreloader();
           $("#toolbar a").text("提交成功")
+          initPage();
           $("#toolbar").animate({
             "bottom": "-=50px"
           }, 1000, function(){
             //$("#toolbar").removeClass('beneath');
-            location.reload();
           });
         }, 1000);
       },
@@ -137,26 +144,12 @@ $(document).ready(function(){
     $("#fileUpload").click();
   });
 
-  function imagePreview(){
-    var loadingImage = loadImage(
-      $("#fileUpload")[0].files[0],
-      function(img){
-        $("#buttonUpload").removeClass('button button-big button-camera')
-        $("#buttonUpload span").remove();
-        $("#buttonUpload").appendChild(img);
-      },
-      {maxWidth: 300}
-    );
-    if (!loadingImage){
-    }
-  }
-
   $("#fileUpload").on('change', function(e){
     var loadingImage = loadImage(
       e.target.files[0],
       function(img){
         $("#buttonUpload").removeClass('button button-big button-camera')
-        $("#buttonUpload span").remove();
+        $("#buttonUpload span").hide();
         $("#buttonUpload img").remove();
         $("#buttonUpload")[0].appendChild(img);
         $("#buttonUpload").addClass('preview');

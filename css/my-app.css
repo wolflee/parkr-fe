@@ -85,3 +85,7 @@ input[type=text] {
   position: relative;
   height: 140%;
 }
+
+#textComment {
+  width: 96%;
+}

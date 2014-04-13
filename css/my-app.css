@@ -94,16 +94,22 @@ input[type=text] {
 }
 
 .content-block-title {
-  margin-bottom: -6px;
+  margin-bottom: 0;
   white-space: normal;
 }
 
+.content-block-title >p {
+  font-size: 12px;
+  margin: 3px auto;
+}
+
 .content-block-title >.right {
+  margin-top: 10px;
   text-align: right;
 }
 
 .page-content {
-  top: -200px;
+  top: -103px;
   position: relative;
   height: 140%;
 }

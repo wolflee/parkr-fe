@@ -2,3 +2,125 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+<<<<<<< HEAD
+=======
+
+#fileUpload {
+  display: none;
+}
+
+.button.button-camera {
+  margin: 0 auto -15px;
+  background: url(../img/camera-normal.png) no-repeat 0 0;
+  /*background-size: 50%;*/
+  width: 80px;
+  height: 65px;
+  border: 0;
+}
+
+.button.button-camera.pressed {
+  background-image: url(../img/camera-pressed.png);
+}
+
+.button.disabled {
+  pointer-events: none;
+  border-color: lightgrey;
+  background: lightgrey;
+}
+
+.button.active {
+  background: #09f;
+  color: #fff;
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.tag {
+  display: inline;
+  border-radius: 0;
+  padding: 8px 5px;
+  line-height: 40px;
+  background: #efeff4;
+  border-color: #999;
+  color: #000;
+  margin-right: 3px;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.toolbar.beneath {
+  bottom: -50px;
+}
+
+.content-block {
+  margin: 0 0 10px;
+}
+
+.content-block-inner {
+  padding: 5px 15px 10px;
+}
+
+.content-block-inner-title {
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type=text] {
+  border-radius: 0;
+  width: 75%;
+  border: 1px solid #999;
+  -webkit-appearance: none;
+}
+
+#toolbar a {
+  width: 96%;
+  display: block;
+  margin: 3px auto;
+  height: 36px;
+  line-height: 34px;
+  border-radius: 0;
+}
+
+.preview {
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+.content-block-title {
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+.content-block-title >p {
+  font-size: 12px;
+  margin: 3px auto;
+}
+
+.content-block-title >.right {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.page-content {
+  top: -103px;
+  position: relative;
+  height: 140%;
+}
+
+#textComment {
+  width: 96%;
+}
+
+.content-block-title strong {
+  color: black;
+}
+>>>>>>> wl/gitcafe-pages

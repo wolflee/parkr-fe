@@ -44,6 +44,9 @@ $(document).ready(function(){
     });
   }
 
+  function getName(){
+    return $("#textComment").val() ? $("#textComment").val() : "";
+  }
 
   $("#buttonSubmit").on('click', function(){
     var price = getPrice();
@@ -54,6 +57,7 @@ $(document).ready(function(){
       latitude: $("#hiddenLocation").data("latitude"),
       longitude: $("#hiddenLocation").data("longitude")
     });
+    var comment = getComment();
 
     var Lot = AV.Object.extend("Lot");
     var lot = new Lot();
@@ -65,6 +69,7 @@ $(document).ready(function(){
     }
     lot.set("name", name);
     lot.set("location", geo);
+    lot.set("comment", comment);
     //myApp.showPreloader('提交中...');
     $("#toolbar a").text("提交中...")
     lot.save(null, {

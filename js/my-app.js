@@ -16,6 +16,7 @@ $(document).ready(function(){
     $("input").val(null);
     $("#buttonUpload span").show();
     $("#buttonUpload img").remove();
+    $("#price a").on('click', moveToolbar);
   }
 
   function getPrice(){

@@ -10,7 +10,7 @@
 .button.button-camera {
   margin: 0 auto -15px;
   background: url(../img/camera-normal.png) no-repeat 0 0;
-  /*background-size: 50%;*/
+  background-size: 75%;
   width: 80px;
   height: 65px;
   border: 0;

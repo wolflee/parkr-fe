@@ -8,7 +8,7 @@
 }
 
 .button.button-camera {
-  margin: 10px auto 0;
+  margin: 0 auto -15px;
   background: url(../img/camera-normal.png) no-repeat 0 0;
   /*background-size: 50%;*/
   width: 80px;
@@ -116,4 +116,8 @@ input[type=text] {
 
 #textComment {
   width: 96%;
+}
+
+.content-block-title strong {
+  color: black;
 }

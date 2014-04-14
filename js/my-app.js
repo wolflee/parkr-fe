@@ -86,6 +86,7 @@ $(document).ready(function(){
         setTimeout(function(){
           //myApp.hidePreloader();
           $("#toolbar a").text("提交成功")
+          lot = null;
           initPage();
           $("#toolbar").animate({
             "bottom": "-=50px"
@@ -99,7 +100,6 @@ $(document).ready(function(){
         alert('Failed to create new object, with error code: ' + error.description);
       }
     });
-    lot = null;
   });
 
   $("#price a").on('click', function(){

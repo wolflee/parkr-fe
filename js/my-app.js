@@ -223,6 +223,7 @@ $(document).ready(function(){
         $("#buttonUpload").addClass('preview');
         var base64 = scaledImage.toDataURL("image/jpeg").split(",")[1];
         //console.log(base64);
+        alert(base64);
         $("#imgUpload").data("base64", base64);
         //$("#imgUpload").data("base64", toBase64(scaledImage));
       },

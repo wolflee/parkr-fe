@@ -17,6 +17,8 @@ $(document).ready(function(){
     $("#buttonUpload span").show();
     $("#buttonUpload img").remove();
     $("#price a").on('click', moveToolbar);
+    $("#buttonUpload").addClass('button button-big button-camera');
+    $("#buttonUpload").removeClass('preview');
   }
 
   //function isCanvasSupported(){
@@ -189,11 +191,11 @@ $(document).ready(function(){
     var loadingImage = loadImage(
       e.target.files[0],
       function(img){
-        $("#buttonUpload").removeClass('button button-big button-camera')
-        $("#buttonUpload span").hide();
-        $("#buttonUpload img").remove();
-        $("#buttonUpload")[0].appendChild(img);
-        $("#buttonUpload").addClass('preview');
+        //$("#buttonUpload").removeClass('button button-big button-camera')
+        //$("#buttonUpload span").hide();
+        //$("#buttonUpload img").remove();
+        //$("#buttonUpload")[0].appendChild(img);
+        //$("#buttonUpload").addClass('preview');
       },
       {maxWidth: 300}
     );

@@ -27,42 +27,6 @@ $(document).ready(function(){
     return !!(elem.getContext && elem.getContext('2d'));
   }
 
-  function resizeToBase64(image, maxWidth, maxHeight){
-    //if (!isCanvasSupported()) { return null; }
-
-    var max_width = 400;
-    var max_height = 300;
-    var width = image.width;
-    var height = image.height;
-    if (width > height) {
-      if (width > max_width) {
-        height *= max_width / width;
-        width = max_width;
-      }
-    } else {
-      if (height > max_height) {
-        width *= max_height / height;
-        height = max_height;
-      }
-    }
-
-    var canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    canvas.getContext("2d").drawImage(image, 0, 0, width, height);
-    return canvas.toDataURL("image/jpeg").split(",")[1];
-  }
-
-  function toBase64(image) {
-    var width = image.width;
-    var height = image.height;
-    var canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    canvas.getContext("2d").drawImage(image, 0, 0, width, height);
-    return canvas.toDataURL("image/jpeg").split(",")[1];
-  }
-
   function getPrice(){
     return $("#price .button.active").data("price");
   }
@@ -75,18 +39,11 @@ $(document).ready(function(){
   }
 
   function getPhotoFile(){
-    var avFile;
-    //var support = true;
     var fileUpload = $("#fileUpload")[0];
     if (fileUpload.files.length > 0) {
       var name = "photo.jpg";
-      //if (isCanvasSupported()) {
-        var dataBase64 = $("#imgUpload").data("base64");
-        avFile = new AV.File(name, { base64: dataBase64 });
-      //} else {
-        //var file = fileUpload.files[0];
-        //avFile = new AV.File(name, file);
-      //}
+      var dataBase64 = $("#imgUpload").data("base64");
+      var avFile = new AV.File(name, { base64: dataBase64 });
       return avFile;
     }
     return null;
@@ -214,43 +171,16 @@ $(document).ready(function(){
             maxHeight: 400
           }
         );
-        //img.id = "imgUpload";
         scaledImage.id = "imgUpload";
-        //console.log(scaledImage);
-        //console.log(img.width);
-        //console.log(scaledImage.width);
-        //console.log(e.target.files[0]);
-        //$("#buttonUpload")[0].appendChild(img);
         $("#buttonUpload")[0].appendChild(scaledImage);
         $("#buttonUpload").addClass('preview');
         var base64 = scaledImage.toDataURL("image/jpeg").split(",")[1];
-        //console.log(base64);
-        //alert(base64);
         $("#imgUpload").data("base64", base64);
-        //$("#imgUpload").data("base64", toBase64(scaledImage));
       },
       {
         canvas: true
-        //maxWidth: 400,
-        //maxHeight: 300,
-        //crop: true
       }
-      //loadingImage
     );
-    //loadingImage.id = "imgUpload";
-    //loadingImage.onload = function() {
-      //var dataBase64 = resizeToBase64(loadingImage, 400, 300);
-      //$(loadingImage).data("base64", dataBase64);
-      //loadingImage.id = "imgUpload";
-      //$(loadingImage).css("max-width", "300px");
-
-      //$("#buttonUpload").removeClass('button button-big button-camera');
-      //$("#buttonUpload span").hide();
-      //$("#buttonUpload img").remove();
-      //$("#buttonUpload")[0].appendChild(loadingImage);
-      //$("#buttonUpload").addClass('preview');
-    //}
-
     if (!loadingImage){
     }
   });

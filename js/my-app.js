@@ -129,6 +129,7 @@ $(document).ready(function(){
           $("#toolbar").animate({
             "bottom": "-=50px"
           }, 1000, function(){
+            $("#toolbar a").text("提交")
           });
         }, 1000);
       },
@@ -191,26 +192,47 @@ $(document).ready(function(){
     var loadingImage = loadImage(
       e.target.files[0],
       function(img){
-        //$("#buttonUpload").removeClass('button button-big button-camera')
-        //$("#buttonUpload span").hide();
-        //$("#buttonUpload img").remove();
+        $("#buttonUpload").removeClass('button button-big button-camera')
+        $("#buttonUpload span").hide();
+        $("#buttonUpload img").remove();
+        var scaledImage = loadImage.scale(
+          img,
+          {
+            maxWidth: 400,
+            maxHeight: 400
+          }
+        );
+        //img.id = "imgUpload";
+        scaledImage.id = "imgUpload";
+        //console.log(img.width);
+        //console.log(scaledImage.width);
+        //console.log(e.target.files[0]);
         //$("#buttonUpload")[0].appendChild(img);
-        //$("#buttonUpload").addClass('preview');
+        $("#buttonUpload")[0].appendChild(scaledImage);
+        $("#buttonUpload").addClass('preview');
+        $("#imgUpload").data("base64", scaledImage.toDataURL("image/jpeg").split(",")[1]);
       },
-      {maxWidth: 300}
+      {
+        canvas: true
+        //maxWidth: 400,
+        //maxHeight: 300,
+        //crop: true
+      }
+      //loadingImage
     );
-    loadingImage.onload = function() {
-      var dataBase64 = resizeToBase64(loadingImage, 400, 300);
-      $(loadingImage).data("base64", dataBase64);
-      loadingImage.id = "imgUpload";
-      $(loadingImage).css("max-width", "300px");
+    //loadingImage.id = "imgUpload";
+    //loadingImage.onload = function() {
+      //var dataBase64 = resizeToBase64(loadingImage, 400, 300);
+      //$(loadingImage).data("base64", dataBase64);
+      //loadingImage.id = "imgUpload";
+      //$(loadingImage).css("max-width", "300px");
 
-      $("#buttonUpload").removeClass('button button-big button-camera');
-      $("#buttonUpload span").hide();
-      $("#buttonUpload img").remove();
-      $("#buttonUpload")[0].appendChild(loadingImage);
-      $("#buttonUpload").addClass('preview');
-    }
+      //$("#buttonUpload").removeClass('button button-big button-camera');
+      //$("#buttonUpload span").hide();
+      //$("#buttonUpload img").remove();
+      //$("#buttonUpload")[0].appendChild(loadingImage);
+      //$("#buttonUpload").addClass('preview');
+    //}
 
     if (!loadingImage){
     }

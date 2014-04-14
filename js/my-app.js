@@ -19,16 +19,16 @@ $(document).ready(function(){
     $("#price a").on('click', moveToolbar);
   }
 
-  function isCanvasSupported(){
-    var elem = document.createElement('canvas');
-    return !!(elem.getContext && elem.getContext('2d'));
-  }
+  //function isCanvasSupported(){
+    //var elem = document.createElement('canvas');
+    //return !!(elem.getContext && elem.getContext('2d'));
+  //}
 
   function resizeToBase64(image, maxWidth, maxHeight){
-    if (!isCanvasSupported()) { return null; }
+    //if (!isCanvasSupported()) { return null; }
 
-    var max_width = maxWidth;
-    var max_height = maxHeight;
+    var max_width = 400;
+    var max_height = 300;
     var width = image.width;
     var height = image.height;
     if (width > height) {
@@ -63,17 +63,17 @@ $(document).ready(function(){
 
   function getPhotoFile(){
     var avFile;
-    var support = true;
+    //var support = true;
     var fileUpload = $("#fileUpload")[0];
     if (fileUpload.files.length > 0) {
       var name = "photo.jpg";
-      if (isCanvasSupported()) {
+      //if (isCanvasSupported()) {
         var dataBase64 = $("#imgUpload").data("base64");
         avFile = new AV.File(name, { base64: dataBase64 });
-      } else {
-        var file = fileUpload.files[0];
-        avFile = new AV.File(name, file);
-      }
+      //} else {
+        //var file = fileUpload.files[0];
+        //avFile = new AV.File(name, file);
+      //}
       return avFile;
     }
     return null;
@@ -198,7 +198,7 @@ $(document).ready(function(){
       {maxWidth: 300}
     );
     loadingImage.onload = function() {
-      var dataBase64 = resizeToBase64(loadingImage, 400, 400);
+      var dataBase64 = resizeToBase64(loadingImage, 400, 300);
       $(loadingImage).data("base64", dataBase64);
       loadingImage.id = "imgUpload";
       $(loadingImage).css("max-width", "300px");

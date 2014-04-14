@@ -16,6 +16,7 @@ $(document).ready(function(){
     $("input").val(null);
     $("#buttonUpload span").show();
     $("#buttonUpload img").remove();
+    $("#buttonUpload canvas").remove();
     $("#price a").on('click', moveToolbar);
     $("#buttonUpload").addClass('button button-big button-camera');
     $("#buttonUpload").removeClass('preview');
@@ -205,6 +206,7 @@ $(document).ready(function(){
         $("#buttonUpload").removeClass('button button-big button-camera')
         $("#buttonUpload span").hide();
         $("#buttonUpload img").remove();
+        $("#buttonUpload canvas").remove();
         var scaledImage = loadImage.scale(
           img,
           {
@@ -214,7 +216,7 @@ $(document).ready(function(){
         );
         //img.id = "imgUpload";
         scaledImage.id = "imgUpload";
-        console.log(scaledImage);
+        //console.log(scaledImage);
         //console.log(img.width);
         //console.log(scaledImage.width);
         //console.log(e.target.files[0]);
@@ -223,7 +225,7 @@ $(document).ready(function(){
         $("#buttonUpload").addClass('preview');
         var base64 = scaledImage.toDataURL("image/jpeg").split(",")[1];
         //console.log(base64);
-        alert(base64);
+        //alert(base64);
         $("#imgUpload").data("base64", base64);
         //$("#imgUpload").data("base64", toBase64(scaledImage));
       },

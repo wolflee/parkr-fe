@@ -19,6 +19,37 @@ $(document).ready(function(){
     $("#price a").on('click', moveToolbar);
   }
 
+  function isCanvasSupported(){
+    var elem = document.createElement('canvas');
+    return !!(elem.getContext && elem.getContext('2d'));
+  }
+
+  function resizeToBase64(image, maxWidth, maxHeight){
+    if (!isCanvasSupported()) { return null; }
+
+    var max_width = maxWidth;
+    var max_height = maxHeight;
+    var width = image.width;
+    var height = image.height;
+    if (width > height) {
+      if (width > max_width) {
+        height *= max_width / width;
+        width = max_width;
+      }
+    } else {
+      if (height > max_height) {
+        width *= max_height / height;
+        height = max_height;
+      }
+    }
+
+    var canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    canvas.getContext("2d").drawImage(image, 0, 0, width, height);
+    return canvas.toDataURL("image/jpeg").split(",")[1];
+  }
+
   function getPrice(){
     return $("#price .button.active").data("price");
   }
@@ -31,12 +62,18 @@ $(document).ready(function(){
   }
 
   function getPhotoFile(){
+    var avFile;
+    var support = true;
     var fileUpload = $("#fileUpload")[0];
     if (fileUpload.files.length > 0) {
-      var file = fileUpload.files[0];
       var name = "photo.jpg";
-
-      var avFile = new AV.File(name, file);
+      if (isCanvasSupported()) {
+        var dataBase64 = $("#imgUpload").data("base64");
+        avFile = new AV.File(name, { base64: dataBase64 });
+      } else {
+        var file = fileUpload.files[0];
+        avFile = new AV.File(name, file);
+      }
       return avFile;
     }
     return null;
@@ -79,24 +116,21 @@ $(document).ready(function(){
     lot.set("name", name);
     lot.set("location", geo);
     lot.set("comment", comment);
-    //myApp.showPreloader('提交中...');
+
     $("#toolbar a").text("提交中...")
     lot.save(null, {
       success: function(lot){
         setTimeout(function(){
-          //myApp.hidePreloader();
           $("#toolbar a").text("提交成功")
           lot = null;
           initPage();
           $("#toolbar").animate({
             "bottom": "-=50px"
           }, 1000, function(){
-            //$("#toolbar").removeClass('beneath');
           });
         }, 1000);
       },
       error: function(lot, error){
-        //myApp.hidePreloader();
         alert('Failed to create new object, with error code: ' + error.description);
       }
     });
@@ -163,6 +197,19 @@ $(document).ready(function(){
       },
       {maxWidth: 300}
     );
+    loadingImage.onload = function() {
+      var dataBase64 = resizeToBase64(loadingImage, 400, 400);
+      $(loadingImage).data("base64", dataBase64);
+      loadingImage.id = "imgUpload";
+      $(loadingImage).css("max-width", "300px");
+
+      $("#buttonUpload").removeClass('button button-big button-camera');
+      $("#buttonUpload span").hide();
+      $("#buttonUpload img").remove();
+      $("#buttonUpload")[0].appendChild(loadingImage);
+      $("#buttonUpload").addClass('preview');
+    }
+
     if (!loadingImage){
     }
   });

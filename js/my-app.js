@@ -214,17 +214,20 @@ $(document).ready(function(){
         );
         //img.id = "imgUpload";
         scaledImage.id = "imgUpload";
+        console.log(scaledImage);
         //console.log(img.width);
         //console.log(scaledImage.width);
         //console.log(e.target.files[0]);
         //$("#buttonUpload")[0].appendChild(img);
         $("#buttonUpload")[0].appendChild(scaledImage);
         $("#buttonUpload").addClass('preview');
-        //$("#imgUpload").data("base64", scaledImage.toDataURL("image/jpeg").split(",")[1]);
-        $("#imgUpload").data("base64", toBase64(scaledImage));
+        var base64 = scaledImage.toDataURL("image/jpeg").split(",")[1];
+        //console.log(base64);
+        $("#imgUpload").data("base64", base64);
+        //$("#imgUpload").data("base64", toBase64(scaledImage));
       },
       {
-        //canvas: true
+        canvas: true
         //maxWidth: 400,
         //maxHeight: 300,
         //crop: true

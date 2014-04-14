@@ -119,8 +119,12 @@ $(document).ready(function(){
   }
 
   $("#feature .required a").on('click', function(){
-    $("#feature .required a").removeClass("active");
-    $(this).addClass("active");
+    if ($(this).hasClass("active")) {
+      $("#feature .required a").removeClass("active");
+    } else {
+      $("#feature .required a").removeClass("active");
+      $(this).addClass("active");
+    }
   });
 
   $("#feature .optional a").on('click', function(){

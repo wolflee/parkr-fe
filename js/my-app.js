@@ -21,10 +21,10 @@ $(document).ready(function(){
     $("#buttonUpload").removeClass('preview');
   }
 
-  //function isCanvasSupported(){
-    //var elem = document.createElement('canvas');
-    //return !!(elem.getContext && elem.getContext('2d'));
-  //}
+  function isCanvasSupported(){
+    var elem = document.createElement('canvas');
+    return !!(elem.getContext && elem.getContext('2d'));
+  }
 
   function resizeToBase64(image, maxWidth, maxHeight){
     //if (!isCanvasSupported()) { return null; }
@@ -45,6 +45,16 @@ $(document).ready(function(){
       }
     }
 
+    var canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    canvas.getContext("2d").drawImage(image, 0, 0, width, height);
+    return canvas.toDataURL("image/jpeg").split(",")[1];
+  }
+
+  function toBase64(image) {
+    var width = image.width;
+    var height = image.height;
     var canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
@@ -210,10 +220,11 @@ $(document).ready(function(){
         //$("#buttonUpload")[0].appendChild(img);
         $("#buttonUpload")[0].appendChild(scaledImage);
         $("#buttonUpload").addClass('preview');
-        $("#imgUpload").data("base64", scaledImage.toDataURL("image/jpeg").split(",")[1]);
+        //$("#imgUpload").data("base64", scaledImage.toDataURL("image/jpeg").split(",")[1]);
+        $("#imgUpload").data("base64", toBase64(scaledImage));
       },
       {
-        canvas: true
+        //canvas: true
         //maxWidth: 400,
         //maxHeight: 300,
         //crop: true

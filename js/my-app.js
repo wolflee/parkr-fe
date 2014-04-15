@@ -184,7 +184,11 @@ $(document).ready(function(){
 
     var scaledImage = $("#imgUpload")[0];
     if(isiOSDevice()) {
-      mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: 6 });
+      var orientation;
+      EXIF.getData(e.target.files[0], function(){
+        orientation = EXIF.getTag(this, "Orientation");
+      });
+      mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: orientation });
     } else {
       mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0 });
     }

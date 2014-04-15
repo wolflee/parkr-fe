@@ -190,6 +190,10 @@ $(document).ready(function(){
     $("#buttonUpload").addClass('preview');
     $("#imgUpload").show();
 
+    EXIF.getData(e.target.files[0], function() {
+        alert(EXIF.pretty(this));
+    });
+
     //$("#imgUpload").data("base64", $("#imgUpload")[0].src.split(",")[1]);
 
     //var loadingImage = loadImage(

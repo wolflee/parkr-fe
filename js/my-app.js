@@ -183,15 +183,16 @@ $(document).ready(function(){
     var mpImg = new MegaPixImage(file);
 
     var scaledImage = $("#imgUpload")[0];
-    //if(isiOSDevice()) {
-      //var orientation;
-      //EXIF.getData(e.target.files[0], function(){
-        //orientation = EXIF.getTag(this, "Orientation");
-      //});
-      //mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: orientation });
-    //} else {
+    if(isiOSDevice()) {
+      var orientation;
+      EXIF.getData(e.target.files[0], function(){
+        orientation = EXIF.getTag(this, "Orientation");
+      });
+      alert(orientation);
+      mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: orientation });
+    } else {
       mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0 });
-    //}
+    }
 
     $("#buttonUpload").removeClass('button button-big button-camera')
     $("#buttonUpload span").hide();
@@ -201,9 +202,9 @@ $(document).ready(function(){
     $("#buttonUpload").addClass('preview');
     $("#imgUpload").show();
 
-    EXIF.getData(e.target.files[0], function() {
-        alert(EXIF.pretty(this));
-    });
+    //EXIF.getData(e.target.files[0], function() {
+        //alert(EXIF.pretty(this));
+    //});
 
     //$("#imgUpload").data("base64", $("#imgUpload")[0].src.split(",")[1]);
 

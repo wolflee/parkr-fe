@@ -167,10 +167,10 @@ $(document).ready(function(){
     if(isiOSDevice()) {
       EXIF.getData(e.target.files[0], function(){
         var orientation = EXIF.getTag(this, "Orientation");
-        mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: orientation });
+        mpImg.render(scaledImage, { maxWidth: 600, maxHeight: 600, quality: 1.0, orientation: orientation });
       });
     } else {
-      mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0 });
+      mpImg.render(scaledImage, { maxWidth: 600, maxHeight: 600, quality: 1.0 });
     }
 
     $("#buttonUpload").removeClass('button button-big button-camera')

@@ -8,12 +8,12 @@
 }
 
 .button.button-camera {
-  margin: 0 auto 0px;
+  margin: 0 0 -8px 13px;
   background: url(../img/cmr-n.png) no-repeat 0 0;
   background-size: 90%;
   width: 80px;
   height: 80px;
-  border: 0;
+  border: 0 none;
 }
 
 .button.button-camera.pressed {

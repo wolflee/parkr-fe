@@ -184,12 +184,12 @@ $(document).ready(function(){
 
     var scaledImage = $("#imgUpload")[0];
     if(isiOSDevice()) {
-      //var orientation;
-      //EXIF.getData(e.target.files[0], function(){
-        ////$("#imageUpload").data("orientation") = EXIF.getTag(this, "Orientation");
-        //var orientation = EXIF.getTag(this, "Orientation");
-        mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: 0 });
-      //});
+      var orientation;
+      EXIF.getData(e.target.files[0], function(){
+        //$("#imageUpload").data("orientation") = EXIF.getTag(this, "Orientation");
+        var orientation = EXIF.getTag(this, "Orientation");
+        mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: orientation });
+      });
       //alert(orientation);
     } else {
       mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: 0  });

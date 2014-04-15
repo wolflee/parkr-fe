@@ -8,16 +8,19 @@
 }
 
 .button.button-camera {
-  margin: 0 0 -8px 11px;
-  background: url(../img/cmr-n.png) no-repeat 0 0;
-  background-size: 90%;
-  width: 80px;
-  height: 80px;
-  border: 0 none;
+  font-size: 60px;
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  border: 1px solid #c4c4c4;
+  padding: 13px 10px;
 }
 
+
 .button.button-camera.pressed {
-  background-image: url(../img/cmr-p.png);
+    background-color: #007aff;
+    color: white;
 }
 
 .button.disabled {

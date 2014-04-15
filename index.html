@@ -8,6 +8,7 @@
     <title>易泊・收集</title>
     <link rel="stylesheet" href="css/framework7.css">
     <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/iconfont.css">
     <link rel="apple-touch-icon" href="img/app-icon.png">
   </head>
   <body>
@@ -26,7 +27,7 @@
                 <p>使用：请在能停车地点或附近选择以下信息并提交</p>
                 <p>状态：目前信息收集和App开发中</p>
                 <p>联系：任何建议请发邮件至ezparking@163.com</p>
-                <p class="right">关于此App</p>
+                <p class="right"><span class="icon-arrow-up"></span>关于此App</p>
               </div>
               <div class="content-block" id="price">
                 <div class="content-block-inner">
@@ -72,9 +73,10 @@
               <div class="content-block">
                 <div class="content-block-inner">
                   <span class="content-block-inner-title">拍一拍停车收费牌或环境</span>
-                  <div class="row" align="center">
+                  <div class="row">
                       <input type="file" id="fileUpload" accept="image/*" />
                       <a href="#" id="buttonUpload" class="button button-big button-camera">
+                        <span class="icon-camera"></span>
                         <img id="imgUpload" style="display:none;" width="300px">
                       </a>
                   </div>

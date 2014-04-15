@@ -20,6 +20,9 @@ function convertImgToBase64(url, callback, outputFormat){
   img.src = url;
 }
 
+function isiOSDevice(){
+  return !!(navigator.userAgent.match(/(iPod|iPhone|iPad)/));
+}
 AV.initialize("gosiknzn1db4o6sdlzjo2ozq17sqhyfl1wdomipneda90bbo", "x6zak5uxsty6jatbxx46al0rfsulj2lxntwpgh5125qr63j5");
 
 $(document).ready(function(){
@@ -180,7 +183,11 @@ $(document).ready(function(){
     var mpImg = new MegaPixImage(file);
 
     var scaledImage = $("#imgUpload")[0];
-    mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: 1 });
+    if(isiOSDevice()) {
+      mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: 6 });
+    } else {
+      mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0 });
+    }
 
     $("#buttonUpload").removeClass('button button-big button-camera')
     $("#buttonUpload span").hide();
@@ -190,9 +197,9 @@ $(document).ready(function(){
     $("#buttonUpload").addClass('preview');
     $("#imgUpload").show();
 
-    EXIF.getData(e.target.files[0], function() {
-        alert(EXIF.pretty(this));
-    });
+    //EXIF.getData(e.target.files[0], function() {
+        //alert(EXIF.pretty(this));
+    //});
 
     //$("#imgUpload").data("base64", $("#imgUpload")[0].src.split(",")[1]);
 

@@ -9,15 +9,14 @@
 
 .button.button-camera {
   margin: 0 auto -15px;
-  background: url(../img/camera-normal.png) no-repeat 0 0;
-  background-size: 75%;
-  width: 80px;
-  height: 65px;
+  background: url(../img/cmr-n.png) no-repeat 0 0;
+  width: 95px;
+  height: 95px;
   border: 0;
 }
 
 .button.button-camera.pressed {
-  background-image: url(../img/camera-pressed.png);
+  background-image: url(../img/cmr-p.png);
 }
 
 .button.disabled {

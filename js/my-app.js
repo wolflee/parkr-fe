@@ -180,7 +180,7 @@ $(document).ready(function(){
     var mpImg = new MegaPixImage(file);
 
     var scaledImage = $("#imgUpload")[0];
-    mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0 });
+    mpImg.render(scaledImage, { maxWidth: 400, maxHeight: 400, quality: 1.0, orientation: 1 });
 
     $("#buttonUpload").removeClass('button button-big button-camera')
     $("#buttonUpload span").hide();

@@ -117,6 +117,8 @@ $(document).ready(function(){
 
   $("#price a").on('click', moveToolbar);
 
+  $("#price a").on('click', getGeoLocation);
+
   function moveToolbar(){
     $("#price a").off('click', moveToolbar);
     $("#toolbar").animate({
